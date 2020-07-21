@@ -7,8 +7,13 @@ export default class AlbumList extends Component {
     _renderAlbumList() {
         const { albumList } = this.props
 
+        if (albumList === undefined) return
+
         return albumList.map( (element, index) => (
-            <AlbumItem key={index} className='item'/>
+            <AlbumItem key={index} imageUrl={element.imageUrl} 
+                       albumTitle={element.title} albumArtist='NEW REQUEST NEEDED' 
+                       releaseDate={element.releaseDate} price={element.price} 
+                       isFavorite={element.favorite} className='item'/>
         ))
     }
     

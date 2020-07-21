@@ -19,6 +19,8 @@ export class Home extends Component {
              data => {
                 this.setState({
                     albumList: data
+                }, () => {
+                    console.log(this.state.albumList)
                 })
              }
          )
