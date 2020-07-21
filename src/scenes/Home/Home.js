@@ -19,17 +19,17 @@ export class Home extends Component {
     }
 
     componentDidMount() {
-        const {limit} = this.state
+        let {limit} = this.props.match.params
 
-        requestAlbumList().then(
-            data => this._setAlbumList(data)
+        
+        getAlbumsByName('').then(
+            data => {
+                if (limit === undefined || limit === '0') 
+                    limit = '10'
+                this._setAlbumList(data.splice(0, limit))
+            } 
         )
 
-        if (limit === undefined || limit === 0) {
-            this.setState({
-                limit: 10
-            })
-        }
     }
 
     _handleChange = input => {

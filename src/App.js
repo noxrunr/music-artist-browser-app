@@ -9,8 +9,9 @@ function App() {
     <div>
       <Router>
         <Switch>
-          <Route  path='/:limit?' component={Home} />
-          <Route path='/artist:artistId' component={Artist} />
+          <Route  path='/limit=:limit?' component={Home} />
+          <Route  path='/' component={Home} />
+          <Route path='/artist/:artistId' component={Artist} />
         </Switch>
       </Router>
     </div>
