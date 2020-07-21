@@ -17,6 +17,7 @@
     display: flex;
     border-radius: 10px;
     background-color: red;
+    margin-right: 15px;
 }
 
 .albumTitle {
@@ -54,6 +55,7 @@
     display: flex;
     align-items: center;
     font-weight: bold;
+    margin-right: 15px;
 }
 
 .favorite {
@@ -82,7 +84,31 @@
     color: #9c27b0;
 }
 
+.elipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+}
 
 @media only screen and (max-width: 700px) {
+
+    /* 'albumImage albumTitle albumTitle . . . released . price favorite favorite' */
+
+    .wrap {
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: 
+            'albumImage albumTitle'
+            'albumImage artistName'
+            'albumImage released'
+            'albumImage price'
+            '. .'
+            'favorite favorite'
+        ;
+    }
     
+    .albumImage {
+        width: 150px;
+        height: 150px;
+    }
 }

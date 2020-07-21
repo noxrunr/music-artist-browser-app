@@ -11,13 +11,12 @@ export default class AlbumItem extends Component {
                 
                 <img src='https://cobblestone.me/wp-content/plugins/photonic/include/images/placeholder.png' className='albumImage'></img>
 
-                <div className='albumTitle'>Feel Good Inc.</div>
+                <div className='albumTitle elipsis'>Feel Good Inc.</div>
 
-                <div className='artistName'>Gorillaz</div>
+                <div className='artistName elipsis'>Gorillaz</div>
 
                 <div className='released'>
-                    <span>Released: </span>&nbsp;
-                    2005
+                    <span>Released: </span>&nbsp;2005
                 </div>
 
                 <div className='price'>$14.99</div>

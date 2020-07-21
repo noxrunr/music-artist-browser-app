@@ -63,18 +63,18 @@ input[type='text'] {
 @media only screen and (max-width: 700px) {
     .container {
         display: grid;
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(2, auto);
         grid-template-areas:
             '. title .'
             '. search .';
     }
 
     .title {
-        grid-area: title;
         text-align: center;
     }
 
     .search {
-        grid-area: search;
         padding-bottom: 25px;
     }
 
