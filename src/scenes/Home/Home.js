@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import AlbumList from '../../components/AlbumList/AlbumList'
-import {requestAlbumList} from '../../services/api/home'
+import {requestAlbumList, getAlbumsByName} from '../../services/api/home'
 
 export class Home extends Component {
 
@@ -12,37 +12,40 @@ export class Home extends Component {
         albumList: []
     }
     
+    _setAlbumList = (data) => {
+        this.setState({
+            albumList: data
+        })
+    }
+
     componentDidMount() {
         const {limit} = this.state
 
-         requestAlbumList().then(
-             data => {
-                this.setState({
-                    albumList: data
-                }, () => {
-                    console.log(this.state.albumList)
-                })
-             }
-         )
+        requestAlbumList().then(
+            data => this._setAlbumList(data)
+        )
 
         if (limit === undefined || limit === 0) {
             this.setState({
                 limit: 10
             })
         }
-
-
     }
 
     _handleChange = input => {
         this.setState({
             [input.target.name]: input.target.value
         })
-        console.log(this.state.searchQuery)
     }
 
     _search = () => {
-        console.log('Search query: ' + this.state.searchQuery)
+
+        const { searchQuery } = this.state
+
+        getAlbumsByName(searchQuery).then(
+            data => this._setAlbumList(data)
+        )
+
     }
 
     render() {

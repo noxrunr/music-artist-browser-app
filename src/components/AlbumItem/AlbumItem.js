@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './styles.css'
+import { getYear } from '../../services/helpers'
 
 export default class AlbumItem extends Component {
     render() {
@@ -18,7 +19,7 @@ export default class AlbumItem extends Component {
                 <div className='artistName elipsis'>{albumArtist}</div>
 
                 <div className='released'>
-                    <span>Released: </span>&nbsp;{releaseDate}
+                    <span>Released: </span>&nbsp;{getYear(releaseDate)}
                 </div>
 
                 <div className='price'>{price}</div>

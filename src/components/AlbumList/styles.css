@@ -1,6 +1,7 @@
 .albumList {
     display: grid;
-    grid-template-areas: '. items items items items items items.';
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: '. items items items items items items .';
     margin-top: 4rem;
 }
 
