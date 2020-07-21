@@ -5,9 +5,14 @@ import NavBar from '../../components/NavBar/NavBar'
 export default class Artist extends Component {
 
     state = {
-        title: ''
+        title: '',
+        item: {}
     }
     
+    componentDidMount() {
+
+    }
+
     render() {
         return (
             <div>
