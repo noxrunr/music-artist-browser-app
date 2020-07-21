@@ -1,0 +1,9 @@
+.albumList {
+    display: grid;
+    grid-template-areas: '. items items items items items items.';
+    margin-top: 4rem;
+}
+
+.items {
+    grid-area: items;
+}
