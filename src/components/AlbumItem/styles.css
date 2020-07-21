@@ -82,6 +82,16 @@
     white-space: nowrap;
 }
 
+.favorite > button.toggle {
+    border: 1px solid #13d6ea;
+    background-color: white;
+    color: #13d6ea;
+}
+
+.favorite > button.toggle::after {
+    content: 'Remove Favorite'
+}
+
 .favorite > button:hover {
     border: 1px solid #13d6ea;
     background-color: white;
