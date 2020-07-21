@@ -2,8 +2,8 @@
     display: grid;
     grid-template-columns: repeat(11, .14fr);
     grid-template-areas: 
-        'albumImage albumTitle albumTitle . . . released . price favorite favorite'
-        'albumImage artistName artistName . . . released . price favorite favorite';
+        'albumImage albumTitle albumTitle albumTitle albumTitle released released price price favorite favorite'
+        'albumImage artistName artistName artistName artistName released released price price favorite favorite';
     padding: 18px 20px 18px 20px;
     background: white;
     margin: 25px 0 25px 0;
@@ -27,6 +27,7 @@
     color: #363636;
     font-size: 20px;
     font-weight: bold;
+    margin-right: 15px;
 }
 
 .artistName {
@@ -43,11 +44,13 @@
     align-items: center;
     font-size: 15px;
     font-weight: bold;
+    margin-right: 15px;
 }
 
 .released > span {
     color: #a0a0a0;
     font-weight: normal;
+    align-items: center;
 }
 
 .price {
@@ -56,6 +59,7 @@
     align-items: center;
     font-weight: bold;
     margin-right: 15px;
+    padding-bottom: 2px;
 }
 
 .favorite {
@@ -78,6 +82,7 @@
     cursor: pointer;
     transition: all .2s ease;
     font-weight: bold;
+    font-size: 12px;
 }
 
 .favorite > button.toggle {
@@ -102,6 +107,34 @@
     text-overflow: ellipsis !important;
 }
 
+@media only screen and (max-width: 1200px) {
+    .favorite > button {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .favorite > button {
+        font-size: 6px;
+    }
+    .albumTitle {
+        font-size: 17px;
+    }
+
+    .artistName {
+        font-size: 11px;
+    }
+
+    .released {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+
+}
+
 @media only screen and (max-width: 700px) {
 
     /* 'albumImage albumTitle albumTitle . . . released . price favorite favorite' */
@@ -123,6 +156,8 @@
         width: 150px;
         height: 150px;
     }
+
+    
 }
 
 
@@ -151,5 +186,9 @@
 
     .price {
         font-size: 10px;
+    }
+
+    .favorites > button {
+        font-size: 15px;
     }
 }

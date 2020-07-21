@@ -18,11 +18,11 @@ export default class AlbumItem extends Component {
 
                 <div className='artistName elipsis'>{albumArtist}</div>
 
-                <div className='released'>
+                <div className='released elipsis'>
                     <span>Released: </span>&nbsp;{getYear(releaseDate)}
                 </div>
 
-                <div className='price'>{price}</div>
+                <div className='price elipsis'>{price}</div>
 
                 <div className='favorite'>
                     <button>Mark as Favorite</button>
