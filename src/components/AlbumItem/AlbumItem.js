@@ -8,6 +8,7 @@ export default class AlbumItem extends Component {
         const { imageUrl, albumTitle, albumArtist, releaseDate, price, isFavorite } = this.props
 
         // TODO: toggle for favorites
+
         
         return (
             <div className='wrap'>

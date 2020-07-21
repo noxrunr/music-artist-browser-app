@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import AlbumList from '../../components/AlbumList/AlbumList'
-import {requestAlbumList, getAlbumsByName} from '../../services/api/home'
+import {requestAlbumList, getAlbumsByName, getArtistsById} from '../../services/api/home'
 
 export class Home extends Component {
 
@@ -9,12 +9,19 @@ export class Home extends Component {
         title: 'Album List',
         searchQuery: '',
         limit: this.props.match.params.limit,
-        albumList: []
+        albumList: [],
+        artistList: [],
     }
     
     _setAlbumList = (data) => {
         this.setState({
             albumList: data
+        })
+    }
+
+    _setArtistList = (data) => {
+        this.setState({
+            artistList: data
         })
     }
 
@@ -28,6 +35,12 @@ export class Home extends Component {
                     limit = '10'
                 this._setAlbumList(data.splice(0, limit))
             } 
+        )
+
+        getArtistsById('').then(
+            data => {
+                this._setArtistList(data)
+            }
         )
 
     }
@@ -50,13 +63,13 @@ export class Home extends Component {
 
     render() {
 
-        const { title, albumList } = this.state
+        const { title, albumList, artistList } = this.state
 
         return (
             <div>
                 <NavBar title={title} search={this._search} handleChange={this._handleChange}/>
             
-                <AlbumList list={albumList}/>
+                <AlbumList albumList={albumList} artistList={artistList}/>
             </div>
         )
     }
