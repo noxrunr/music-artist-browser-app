@@ -1,6 +1,7 @@
 .wrap {
     display: grid;
     grid-template-columns: repeat(11, .14fr);
+    grid-template-rows: repeat(2, 40px);
     grid-template-areas: 
         'albumImage albumTitle albumTitle albumTitle albumTitle released released price price favorite favorite'
         'albumImage artistName artistName artistName artistName released released price price favorite favorite';
@@ -59,7 +60,7 @@
     align-items: center;
     font-weight: bold;
     margin-right: 15px;
-    padding-bottom: 2px;
+    font-size: 15px;
 }
 
 .favorite {
@@ -67,7 +68,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
 }
 
 .favorite > button {
@@ -83,16 +83,6 @@
     transition: all .2s ease;
     font-weight: bold;
     font-size: 12px;
-}
-
-.favorite > button.toggle {
-    border: 1px solid #13d6ea;
-    background-color: white;
-    color: #13d6ea;
-}
-
-.favorite > button.toggle::after {
-    content: 'Remove Favorite'
 }
 
 .favorite > button:hover {

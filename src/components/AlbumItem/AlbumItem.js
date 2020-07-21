@@ -22,9 +22,11 @@ export default class AlbumItem extends Component {
                     <span>Released: </span>&nbsp;{getYear(releaseDate)}
                 </div>
 
-                <div className='price elipsis'>{price}</div>
+                <div className='price elipsis'>
+                    {price}
+                </div>
 
-                <div className='favorite'>
+                <div className={(isFavorite) ? '' : 'favorite'}>
                     <button>Mark as Favorite</button>
                 </div>
 
