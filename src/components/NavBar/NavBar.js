@@ -11,15 +11,20 @@ export default class NavBar extends Component {
             <nav className='container'>
                 <div className='title'>{title}</div>
 
-                <div className='search'>
-                    <input type='text' 
-                           placeholder='Search...'
-                           name='searchQuery'
-                           onChange={handleChange} />   
-                    <button id='searchButton' onClick={search} >
-                        <i className="material-icons">search</i>
-                    </button>
-                </div>
+
+                {
+                    (handleChange !== undefined) ? (
+                        <div className='search'>
+                            <input type='text' 
+                                placeholder='Search...'
+                                name='searchQuery'
+                                onChange={handleChange} />   
+                            <button id='searchButton' onClick={search} >
+                                <i className="material-icons">search</i>
+                            </button>
+                        </div>
+                    ) : null
+                }
             </nav>
         )
     }
