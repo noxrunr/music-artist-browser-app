@@ -9,8 +9,8 @@ export default class AlbumList extends Component {
     }
     
     _renderAlbumList() {
-        return this.state.albumList.map( () => (
-            <AlbumItem className='item'/>
+        return this.state.albumList.map( (element, index) => (
+            <AlbumItem key={index} className='item'/>
         ))
     }
     

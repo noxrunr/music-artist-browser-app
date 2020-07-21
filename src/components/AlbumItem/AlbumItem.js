@@ -9,7 +9,7 @@ export default class AlbumItem extends Component {
         return (
             <div className='wrap'>
                 
-                <img src='https://cobblestone.me/wp-content/plugins/photonic/include/images/placeholder.png' className='albumImage'></img>
+                <img alt='' src='https://cobblestone.me/wp-content/plugins/photonic/include/images/placeholder.png' className='albumImage'></img>
 
                 <div className='albumTitle elipsis'>Feel Good Inc.</div>
 
