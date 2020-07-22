@@ -37,6 +37,12 @@
     align-items: center;
     color: #a0a0a0;
     font-size: 14px;
+    text-decoration: none;
+    transition: opacity .2s ease;
+}
+
+.artistName:hover {
+    opacity: 0.5
 }
 
 .released {

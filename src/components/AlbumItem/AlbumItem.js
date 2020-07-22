@@ -15,7 +15,11 @@ export default class AlbumItem extends Component {
 
                 <div className='albumTitle elipsis'>{albumTitle}</div>
 
-                <Link to={`artist/${artistId}`} className='artistName elipsis'>{albumArtist}</Link>
+                <Link to={{
+                    pathname: `/artist/${artistId}`,
+                }} className='artistName elipsis'>
+                    {albumArtist}
+                </Link>
 
                 <div className='released elipsis'>
                     <span>Released: </span>&nbsp;{getYear(releaseDate)}
