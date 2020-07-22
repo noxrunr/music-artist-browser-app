@@ -18,6 +18,9 @@
 .title {
     grid-area: title;
     font-weight: bold;
+    font-size: 28px;
+    color: #363636;
+    letter-spacing: -0.88px;
 }
 
 .search {
@@ -28,7 +31,7 @@
 }
 
 input[type='text'] {
-    height: 45px;
+    height: 40px;
     width: 100%;
     padding: 0 0 0 20px;
     outline: none;
@@ -39,8 +42,14 @@ input[type='text'] {
     border-radius: 4px;
 }
 
+::placeholder { 
+    color: #828282;
+    opacity: 1; 
+    letter-spacing: -0.51px;
+  }
+
 #searchButton {
-    height: 45px;
+    height: 40px;
     margin-left: -50px;
     width: 50px;
     outline: none;

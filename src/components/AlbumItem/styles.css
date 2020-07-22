@@ -24,27 +24,25 @@
 .albumTitle {
     grid-area: albumTitle;
     display: block;
-    align-items: center;
     color: #363636;
     font-size: 24px;
     font-weight: 600;
     margin-right: 30px;
-    margin-top: 5px;
+    line-height: 45px;
+    letter-spacing: -0.66px;
 }
 
 .artistName {
     grid-area: artistName;
     display: block;
-    align-items: center;
     color: #a0a0a0;
     font-size: 14px;
     text-decoration: none;
     transition: opacity .2s ease;
     text-transform: uppercase;
-    min-width: 0;
-    margin-top: 15px;
     margin-right: 30px;
-
+    line-height: 45px;
+    letter-spacing: -0.44px;
 }
 
 .artistName:hover {
@@ -180,10 +178,12 @@
 
     .albumTitle {
         margin: 0;
+        line-height: normal;
     }
 
     .artistName {
         margin: 0;
+        line-height: normal;
     }
 
     .released {
@@ -227,6 +227,6 @@
     }
 
     .favorites > button {
-        font-size: 15px;
+        font-size: 11px;
     }
 }

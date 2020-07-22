@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import NavBar from '../../components/NavBar/NavBar'
-import { getAlbumsByArtistId, getArtistsById, patchFavoriteById } from '../../services/api/home'
+import { getAlbumsByArtistId, getArtistsById, patchFavoriteById } from '../../services/api/requests'
 import AlbumList from '../../components/AlbumList/AlbumList'
 
 export default class Artist extends Component {

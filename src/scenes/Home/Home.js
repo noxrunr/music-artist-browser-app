@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import AlbumList from '../../components/AlbumList/AlbumList'
-import {getAlbumsByName, getArtistsById, patchFavoriteById} from '../../services/api/home'
+import {getAlbumsByName, getArtistsById, patchFavoriteById} from '../../services/api/requests'
 
 export class Home extends Component {
 
     state = {
-        title: 'Album List',
+        title: 'Album list',
         searchQuery: '',
         limit: this.props.match.params.limit,
         albumList: [],
@@ -46,7 +46,7 @@ export class Home extends Component {
                     this._setArtistList(data)
                 }
             )
-        }, 100)
+        }, 150)
     }
 
     _handleChange = input => {

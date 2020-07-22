@@ -34,7 +34,7 @@ export default class AlbumItem extends Component {
                         (!isFavorite) ? 
                             <button onClick={() => toggleFavorite(id, !isFavorite)}>Mark as Favorite</button>
                             :
-                            <button onClick={() => toggleFavorite(id, !isFavorite)}>Remove favorite (&#10007;)</button>
+                            <button onClick={() => toggleFavorite(id, !isFavorite)}>Remove favorite</button>
                     }
                     
 
