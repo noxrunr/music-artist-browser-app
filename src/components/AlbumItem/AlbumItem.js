@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import './styles.css'
 import { getYear } from '../../services/helpers'
+import { Link } from 'react-router-dom'
 
 export default class AlbumItem extends Component {
     render() {
 
-        const { id, imageUrl, albumTitle, albumArtist, releaseDate, price, isFavorite, toggleFavorite } = this.props
+        const { id, artistId, imageUrl, albumTitle, albumArtist, releaseDate, price, isFavorite, toggleFavorite } = this.props
         
         return (
             <div className='wrap'>
@@ -14,7 +15,7 @@ export default class AlbumItem extends Component {
 
                 <div className='albumTitle elipsis'>{albumTitle}</div>
 
-                <div className='artistName elipsis'>{albumArtist}</div>
+                <Link to={`artist/${artistId}`} className='artistName elipsis'>{albumArtist}</Link>
 
                 <div className='released elipsis'>
                     <span>Released: </span>&nbsp;{getYear(releaseDate)}
@@ -29,7 +30,7 @@ export default class AlbumItem extends Component {
                         (!isFavorite) ? 
                             <button onClick={() => toggleFavorite(id, !isFavorite)}>Mark as Favorite</button>
                             :
-                            <button onClick={() => toggleFavorite(id, !isFavorite)}>Remove favorite</button>
+                            <button onClick={() => toggleFavorite(id, !isFavorite)}>Remove favorite (&#10007;)</button>
                     }
                     
 

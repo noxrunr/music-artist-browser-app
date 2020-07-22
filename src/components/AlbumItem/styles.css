@@ -64,6 +64,7 @@
 }
 
 .notFavorite > button {
+    opacity: 1;
     outline: none;
     background: transparent;
     border: none;
@@ -73,7 +74,7 @@
     text-transform: uppercase;
     width: 100%;
     cursor: pointer;
-    transition: color .2s ease;
+    transition: opacity .2s ease;
 }
 
 .notFavorite > button:hover {

@@ -46,7 +46,7 @@ export class Home extends Component {
                     this._setArtistList(data)
                 }
             )
-        }, 50)
+        }, 100)
     }
 
     _handleChange = input => {

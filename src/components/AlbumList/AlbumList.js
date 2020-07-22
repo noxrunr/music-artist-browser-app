@@ -9,12 +9,12 @@ export default class AlbumList extends Component {
     }
 
     _renderAlbumList() {
-        const { albumList } = this.props
+        const { albumList, artistName } = this.props
 
         return albumList.map( (element) => (
             <AlbumItem key={element.id} imageUrl={element.imageUrl} id={element.id}
-                       albumTitle={element.title} albumArtist={this.getArtistName(element.artistId)} 
-                       releaseDate={element.releaseDate} price={element.price} 
+                       albumTitle={element.title} albumArtist={(artistName === undefined) ? this.getArtistName(element.artistId) : artistName} 
+                       releaseDate={element.releaseDate} price={element.price} artistId={element.artistId}
                        isFavorite={element.favorite} className='item' toggleFavorite={this._toggleFavorite}/>
         ))
     }
