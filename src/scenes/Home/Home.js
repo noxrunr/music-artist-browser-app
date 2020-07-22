@@ -30,9 +30,13 @@ export class Home extends Component {
     }
 
     _getData = () => {
+
+        const queryString = require('query-string');
+
         setTimeout(() => {
-            let {limit} = this.props.match.params
+            const {search} = this.props.location
             const {searchQuery} = this.state
+            let limit = queryString.parse(search).limit
 
             getAlbumsByName((searchQuery === '') ? '' : searchQuery).then(
                 data => {
@@ -47,7 +51,7 @@ export class Home extends Component {
                     this._setArtistList(data)
                 }
             )
-        }, 150)
+        }, 200)
     }
 
     _handleChange = input => {

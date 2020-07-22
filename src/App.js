@@ -9,7 +9,7 @@ function App() {
     <div>
       <Router>
         <Switch>
-          <Route exact path='/limit=:limit?' component={Home} />
+          <Route exact path='/search?limit=2' component={Home} />
           <Route exact path='/' component={Home} />
           <Route exact path='/artist/:artistId' component={Artist} />
         </Switch>
