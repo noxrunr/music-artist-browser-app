@@ -13,23 +13,23 @@ export default class AlbumItem extends Component {
                 
                 <img alt='' src={imageUrl} className='albumImage'></img>
 
-                <div className='albumTitle elipsis'>{albumTitle}</div>
+                <div className='block font-weight-600 margin-right line-height-half albumTitle elipsis'>{albumTitle}</div>
 
                 <Link to={{
                     pathname: `/artist/${artistId}`,
-                }} className='artistName elipsis'>
+                }} className='block margin-right line-height-half artistName elipsis'>
                     {albumArtist}
                 </Link>
 
-                <div className='released elipsis'>
+                <div className='block font-weight margin-right line-height-full released elipsis'>
                     <span>Released: </span>&nbsp;{getYear(releaseDate)}
                 </div>
 
-                <div className='price elipsis'>
+                <div className='block font-weight-600 margin-right line-height-full price elipsis'>
                     {price}
                 </div>
 
-                <div className={(isFavorite) ? 'favorite notFavorite' : 'favorite isFavorite'}>
+                <div className={(isFavorite) ? 'block line-height-full favorite notFavorite' : 'block line-height-full favorite isFavorite'}>
                     {
                         (!isFavorite) ? 
                             <button onClick={() => toggleFavorite(id, !isFavorite)}>Mark as Favorite</button>

@@ -4,7 +4,6 @@
     grid-template-areas: '. title title title search search search .';
     line-height: 100px;
     background: white;
-    font-size: xx-large;
     color: white;
     position: -webkit-sticky;
     position: sticky;
@@ -12,7 +11,6 @@
     align-items: center;
     overflow: hidden;
     box-shadow: 0px 0 3px 0px rgba(0, 0, 0, 0.18);
-    color: black;
 }
 
 .title {
@@ -25,9 +23,9 @@
 
 .search {
     grid-area: search;
-    justify-self: end;
+    /* justify-self: end; */
     display: flex;
-    width: 100%;
+    /* width: 100%; */
 }
 
 input[type='text'] {
@@ -66,13 +64,12 @@ input[type='text'] {
     color: rgb(195, 195, 195);
     vertical-align: sub;
     transition: color .2s ease;
-    padding: 10px;
+    padding-top: 5px;
 }
 
 #searchButton:hover {
-    color: #13d6ea;
+    color: #363636;
 }
-
 
 @media only screen and (max-width: 700px) {
     .container {
@@ -91,5 +88,4 @@ input[type='text'] {
     .search {
         padding-bottom: 25px;
     }
-
  }
