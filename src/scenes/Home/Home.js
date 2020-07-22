@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import AlbumList from '../../components/AlbumList/AlbumList'
-import {requestAlbumList, getAlbumsByName, getArtistsById} from '../../services/api/home'
+import {getAlbumsByName, getArtistsById, patchFavoriteById} from '../../services/api/home'
 
 export class Home extends Component {
 
@@ -26,23 +26,27 @@ export class Home extends Component {
     }
 
     componentDidMount() {
-        let {limit} = this.props.match.params
+        this._getData()
+    }
 
-        
-        getAlbumsByName('').then(
-            data => {
-                if (limit === undefined || limit === '0') 
-                    limit = '10'
-                this._setAlbumList(data.splice(0, limit))
-            } 
-        )
-
-        getArtistsById('').then(
-            data => {
-                this._setArtistList(data)
-            }
-        )
-
+    _getData = () => {
+        setTimeout(() => {
+            let {limit} = this.props.match.params
+    
+            getAlbumsByName('').then(
+                data => {
+                    if (limit === undefined || limit === '0') 
+                        limit = '10'
+                    this._setAlbumList(data.splice(0, limit))
+                } 
+            )
+    
+            getArtistsById('').then(
+                data => {
+                    this._setArtistList(data)
+                }
+            )
+        }, 50)
     }
 
     _handleChange = input => {
@@ -51,14 +55,18 @@ export class Home extends Component {
         })
     }
 
-    _search = () => {
+    _toggleFavorite = (id, isFavorite) => {
+        patchFavoriteById(id, isFavorite).then(
+            this._getData()
+        )
+    }
 
+    _search = () => {
         const { searchQuery } = this.state
 
         getAlbumsByName(searchQuery).then(
             data => this._setAlbumList(data)
         )
-
     }
 
     render() {
@@ -69,7 +77,7 @@ export class Home extends Component {
             <div>
                 <NavBar title={title} search={this._search} handleChange={this._handleChange}/>
             
-                <AlbumList albumList={albumList} artistList={artistList}/>
+                <AlbumList albumList={albumList} artistList={artistList} toggleFavorite={this._toggleFavorite}/>
             </div>
         )
     }

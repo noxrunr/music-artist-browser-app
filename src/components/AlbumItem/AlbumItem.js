@@ -5,10 +5,7 @@ import { getYear } from '../../services/helpers'
 export default class AlbumItem extends Component {
     render() {
 
-        const { imageUrl, albumTitle, albumArtist, releaseDate, price, isFavorite } = this.props
-
-        // TODO: toggle for favorites
-
+        const { id, imageUrl, albumTitle, albumArtist, releaseDate, price, isFavorite, toggleFavorite } = this.props
         
         return (
             <div className='wrap'>
@@ -27,10 +24,16 @@ export default class AlbumItem extends Component {
                     {price}
                 </div>
 
-                <div className={(isFavorite) ? '' : 'favorite'}>
-                    <button>Mark as Favorite</button>
-                </div>
+                <div className={(isFavorite) ? 'favorite notFavorite' : 'favorite isFavorite'}>
+                    {
+                        (!isFavorite) ? 
+                            <button onClick={() => toggleFavorite(id, !isFavorite)}>Mark as Favorite</button>
+                            :
+                            <button onClick={() => toggleFavorite(id, !isFavorite)}>Remove favorite</button>
+                    }
+                    
 
+                </div>
 
             </div>
         )

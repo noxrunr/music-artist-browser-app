@@ -11,7 +11,6 @@ export default class NavBar extends Component {
             <nav className='container'>
                 <div className='title'>{title}</div>
 
-
                 {
                     (handleChange !== undefined) ? (
                         <div className='search'>

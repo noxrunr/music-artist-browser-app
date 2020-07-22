@@ -63,6 +63,23 @@
     font-size: 15px;
 }
 
+.notFavorite > button {
+    outline: none;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    text-decoration: underline;
+    color: #13d6ea;
+    text-transform: uppercase;
+    width: 100%;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+.notFavorite > button:hover {
+    opacity: 0.5;
+}
+
 .favorite {
     grid-area: favorite;
     display: flex;
@@ -70,7 +87,7 @@
     justify-content: flex-end;
 }
 
-.favorite > button {
+.isFavorite > button {
     outline: none;
     width: 100%;
     padding: 10px;
@@ -80,12 +97,12 @@
     border-radius: 4px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all .2s ease;
+    transition: background-color .2s ease;
     font-weight: bold;
     font-size: 12px;
 }
 
-.favorite > button:hover {
+.isFavorite > button:hover {
     border: 1px solid #13d6ea;
     background-color: white;
     color: #13d6ea;
