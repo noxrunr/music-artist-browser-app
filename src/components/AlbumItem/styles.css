@@ -1,7 +1,7 @@
 .wrap {
     display: grid;
     grid-template-columns: repeat(11, .14fr);
-    grid-template-rows: repeat(2, 40px);
+    grid-template-rows: repeat(2, 45px);
     grid-template-areas: 
         'albumImage albumTitle albumTitle albumTitle albumTitle released released price price favorite favorite'
         'albumImage artistName artistName artistName artistName released released price price favorite favorite';
@@ -13,8 +13,8 @@
 
 .albumImage {
     grid-area: albumImage;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     display: flex;
     border-radius: 10px;
     background-color: red;
@@ -23,22 +23,28 @@
 
 .albumTitle {
     grid-area: albumTitle;
-    display: flex;
+    display: block;
     align-items: center;
     color: #363636;
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 15px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 30px;
+    margin-top: 5px;
 }
 
 .artistName {
     grid-area: artistName;
-    display: flex;
+    display: block;
     align-items: center;
     color: #a0a0a0;
     font-size: 14px;
     text-decoration: none;
     transition: opacity .2s ease;
+    text-transform: uppercase;
+    min-width: 0;
+    margin-top: 15px;
+    margin-right: 30px;
+
 }
 
 .artistName:hover {
@@ -47,11 +53,12 @@
 
 .released {
     grid-area: released;
-    display: flex;
+    display: block;
     align-items: center;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 600;
     margin-right: 15px;
+    line-height: 90px;
 }
 
 .released > span {
@@ -62,11 +69,12 @@
 
 .price {
     grid-area: price;
-    display: flex;
+    display: block;
     align-items: center;
-    font-weight: bold;
+    font-weight: 600;
     margin-right: 15px;
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 90px;
 }
 
 .notFavorite > button {
@@ -81,6 +89,7 @@
     width: 100%;
     cursor: pointer;
     transition: opacity .2s ease;
+    font-size: 11px;
 }
 
 .notFavorite > button:hover {
@@ -106,7 +115,7 @@
     cursor: pointer;
     transition: background-color .2s ease;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .isFavorite > button:hover {
@@ -151,8 +160,6 @@
 
 @media only screen and (max-width: 700px) {
 
-    /* 'albumImage albumTitle albumTitle . . . released . price favorite favorite' */
-
     .wrap {
         grid-template-columns: 200px 1fr;
         grid-template-rows: repeat(5, 1fr);
@@ -171,6 +178,23 @@
         height: 150px;
     }
 
+    .albumTitle {
+        margin: 0;
+    }
+
+    .artistName {
+        margin: 0;
+    }
+
+    .released {
+        margin: 0;
+        line-height: normal;
+    }
+
+    .price {
+        margin: 0;
+        line-height: normal;
+    }
     
 }
 
