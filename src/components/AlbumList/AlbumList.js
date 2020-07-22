@@ -21,10 +21,9 @@ export default class AlbumList extends Component {
 
     getArtistName = (id) => {
         const {artistList} = this.props
-
-        artistList.find( function (element) {
-            return (element.id === id) ? element.title : ''
-        }) 
+        const artist =  artistList.find( (element) => element.id === id)
+        if (artist === undefined) return
+        return artist.title
     }
 
     render() {
