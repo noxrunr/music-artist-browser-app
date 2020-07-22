@@ -32,8 +32,9 @@ export class Home extends Component {
     _getData = () => {
         setTimeout(() => {
             let {limit} = this.props.match.params
-    
-            getAlbumsByName('').then(
+            const {searchQuery} = this.state
+
+            getAlbumsByName((searchQuery === '') ? '' : searchQuery).then(
                 data => {
                     if (limit === undefined || limit === '0') 
                         limit = '10'
